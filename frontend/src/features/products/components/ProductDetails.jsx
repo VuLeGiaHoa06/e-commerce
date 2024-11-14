@@ -336,7 +336,7 @@ export const ProductDetails = () => {
                                        enableMouseEvents>
                                        {product?.images.map((image, index) => (
                                           <div
-                                             key={image} // i changed index -> image
+                                             key={index} // i changed index -> image
                                              style={{
                                                 width: "100%",
                                                 height: "100%",

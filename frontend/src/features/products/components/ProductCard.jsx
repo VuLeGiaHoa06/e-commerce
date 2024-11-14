@@ -28,6 +28,7 @@ export const ProductCard = ({
    isWishlistCard,
    isAdminCard,
 }) => {
+   console.log(id);
    const navigate = useNavigate();
    const wishlistItems = useSelector(selectWishlistItems);
    const loggedInUser = useSelector(selectLoggedInUser);

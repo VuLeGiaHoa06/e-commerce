@@ -48,7 +48,7 @@ MERN Ecommerce is a full-stack application designed to transform your online sho
   
      - Powered by Material UI for a visually appealing and user-friendly experience.
     
-##**Scalability:**
+### **Scalability:**
 
    - **Built for Growth:**
   

@@ -3,7 +3,8 @@ MERN Ecommerce is a full-stack application designed to transform your online sho
 ![image](https://github.com/user-attachments/assets/f56dbd50-2c12-497f-b516-128244e555ba)
 ![image](https://github.com/user-attachments/assets/c9b47978-3b49-480e-920f-a9a23d4d7fa7)
 ![image](https://github.com/user-attachments/assets/10329bc9-0e1d-4cf8-a0da-f359b4cb7f5b)
-![image](https://github.com/user-attachments/assets/af3d9676-49ec-4b92-97c9-aeb1747c0c95)
+![image](https://github.com/user-attachments/assets/f06e59ef-1b7d-44a4-b65f-fc744c752afa)
+
 
 
 

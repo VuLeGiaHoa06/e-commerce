@@ -32,6 +32,7 @@ const reviewSchema = new Schema(
          type: Date,
          default: Date.now,
       },
+      name: { type: String },
    },
    { versionKey: false }
 );

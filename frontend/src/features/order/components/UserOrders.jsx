@@ -191,7 +191,7 @@ export const UserOrders = () => {
                                              aspectRatio: is480 ? 3 / 2 : 1 / 1,
                                              objectFit: "contain",
                                           }}
-                                          src={product.product.thumbnail}
+                                          src={product.image}
                                           alt=""
                                        />
                                     </Stack>

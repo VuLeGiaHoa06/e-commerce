@@ -107,6 +107,8 @@ export const ProductDetails = () => {
    const wishlistItemAddStatus = useSelector(selectWishlistItemAddStatus);
    const wishlistItemDeleteStatus = useSelector(selectWishlistItemDeleteStatus);
 
+   console.log(product);
+
    useEffect(() => {
       window.scrollTo({
          top: 0,
@@ -173,7 +175,12 @@ export const ProductDetails = () => {
    }, []);
 
    const handleAddToCart = () => {
-      const item = { user: loggedInUser._id, product: id, quantity };
+      const item = {
+         user: loggedInUser._id,
+         product: id,
+         quantity,
+         image: product?.images[selectedImageIndex],
+      };
       dispatch(addToCartAsync(item));
       setQuantity(1);
    };
@@ -298,6 +305,7 @@ export const ProductDetails = () => {
                                           }}
                                           onClick={() => {
                                              setSelectedImageIndex(index);
+                                             // console.log(index);
                                           }}>
                                           <img
                                              style={{
@@ -401,7 +409,7 @@ export const ProductDetails = () => {
                                           objectFit: "contain",
                                           aspectRatio: 1 / 1,
                                        }}
-                                       src={product?.images[selectedColorIndex]}
+                                       src={product?.images[selectedImageIndex]}
                                        alt={`${product?.title} image`}
                                     />
                                  </div>
@@ -474,7 +482,7 @@ export const ProductDetails = () => {
                                  sx={{ rowGap: "1.3rem" }}
                                  width={"fit-content"}>
                                  {/* colors */}
-                                 <Stack
+                                 {/* <Stack
                                     flexDirection={"row"}
                                     alignItems={"center"}
                                     columnGap={is387 ? "5px" : "1rem"}
@@ -515,7 +523,7 @@ export const ProductDetails = () => {
                                           </div>
                                        ))}
                                     </Stack>
-                                 </Stack>
+                                 </Stack> */}
 
                                  {/* size */}
                                  {/* <Stack

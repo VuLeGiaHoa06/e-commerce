@@ -31,6 +31,7 @@ import CreateIcon from "@mui/icons-material/Create";
 import { MotionConfig, motion } from "framer-motion";
 import { useTheme } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import { selectUserInfo } from "../../user/UserSlice";
 
 export const Reviews = ({ productId, averageRating }) => {
    const dispatch = useDispatch();
@@ -43,6 +44,8 @@ export const Reviews = ({ productId, averageRating }) => {
       formState: { errors },
    } = useForm();
    const loggedInUser = useSelector(selectLoggedInUser);
+   const userInfo = useSelector(selectUserInfo);
+
    const reviewStatus = useSelector(selectReviewStatus);
    const ref = useRef(null);
 
@@ -109,6 +112,7 @@ export const Reviews = ({ productId, averageRating }) => {
          rating: value,
          user: loggedInUser._id,
          product: productId,
+         name: userInfo.name,
       };
       dispatch(createReviewAsync(review));
       setWriteReview(false);
@@ -185,11 +189,11 @@ export const Reviews = ({ productId, averageRating }) => {
                <ReviewItem
                   key={index}
                   id={review._id}
-                  userid={review.user._id}
+                  userid={review.user}
                   comment={review.comment}
                   createdAt={review.createdAt}
                   rating={review.rating}
-                  username={review.user.name}
+                  username={review.name}
                />
             ))}
          </Stack>

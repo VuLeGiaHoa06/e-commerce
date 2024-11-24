@@ -31,7 +31,7 @@ export const ReviewItem = ({
    rating,
    createdAt,
 }) => {
-   console.log(id);
+   console.log(username);
 
    const dispatch = useDispatch();
    const loggedInUser = useSelector(selectLoggedInUser);

@@ -84,14 +84,32 @@ export const ProductCard = ({
                      ? "300px"
                      : "340px"
                }
-               sx={{ cursor: "pointer" }}
+               sx={{
+                  cursor: "pointer",
+                  // i added
+                  overflow: "hidden",
+                  position: "relative",
+               }}
                onClick={() => navigate(`/product-details/${id}`)}>
                {/* image display */}
-               <Stack>
+               <Stack
+                  // i added
+                  sx={{
+                     transition: "transform 0.3s ease", // Smooth transition for hover effect
+                     "&:hover": {
+                        transform: "scale(1.1)", // Zoom effect
+                     },
+                  }}>
                   <img
-                     width={"100%"}
-                     style={{ aspectRatio: 1 / 1, objectFit: "contain" }}
-                     height={"100%"}
+                     // width={"100%"}
+                     // style={{ aspectRatio: 1 / 1, objectFit: "contain" }}
+                     // height={"100%"}
+                     style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                        aspectRatio: "1 / 1",
+                     }}
                      src={thumbnail}
                      alt={`${title} photo unavailable`}
                   />

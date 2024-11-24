@@ -17,7 +17,8 @@ import { Link } from "react-router-dom";
 export const CartItem = ({
    id,
    thumbnail,
-   images,
+   // images,
+   image,
    title,
    category,
    brand,
@@ -77,7 +78,7 @@ export const CartItem = ({
                      aspectRatio: is552 ? 1 / 1 : "",
                      objectFit: "contain",
                   }}
-                  src={thumbnail}
+                  src={image}
                   alt={`${title} image unavailabe`}
                />
             </Stack>

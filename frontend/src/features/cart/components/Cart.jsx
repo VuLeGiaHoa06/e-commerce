@@ -62,6 +62,7 @@ export const Cart = ({ checkout }) => {
          dispatch(resetCartItemRemoveStatus());
       };
    }, []);
+   console.log(items);
 
    return (
       <Stack justifyContent={"flex-start"} alignItems={"center"} mb={"5rem"}>
@@ -84,7 +85,8 @@ export const Cart = ({ checkout }) => {
                         price={item.product.price}
                         quantity={item.quantity}
                         thumbnail={item.product.thumbnail}
-                        images={item.product.images}
+                        // images={item.product.images}
+                        image={item.image}
                         stockQuantity={item.product.stockQuantity}
                         productId={item.product._id}
                      />

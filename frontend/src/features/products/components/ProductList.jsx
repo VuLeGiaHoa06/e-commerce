@@ -244,7 +244,7 @@ export const ProductList = () => {
                   <Stack
                      mb={"5rem"}
                      sx={{ scrollBehavior: "smooth", overflowY: "scroll" }}>
-                     <Typography variant="h4">New Arrivals</Typography>
+                     <Typography variant="h4">Category</Typography>
 
                      <IconButton
                         onClick={handleFilterClose}

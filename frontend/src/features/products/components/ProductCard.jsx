@@ -55,7 +55,7 @@ export const ProductCard = ({
 
    const handleAddToCart = async e => {
       e.stopPropagation();
-      const data = { user: loggedInUser?._id, product: id };
+      const data = { user: loggedInUser?._id, product: id, image: thumbnail };
       dispatch(addToCartAsync(data));
    };
 

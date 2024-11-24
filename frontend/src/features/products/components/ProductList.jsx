@@ -10,6 +10,8 @@ import {
    useMediaQuery,
    useTheme,
 } from "@mui/material";
+import SmartphoneIcon from "@mui/icons-material/Smartphone";
+import LaptopIcon from "@mui/icons-material/Laptop";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -257,13 +259,39 @@ export const ProductList = () => {
                      </IconButton>
 
                      <Stack rowGap={2} mt={4}>
-                        <Typography sx={{ cursor: "pointer" }} variant="body2">
-                           Totes
+                        <Typography
+                           sx={{
+                              cursor: "pointer",
+                              display: "flex",
+                              alignItems: "center",
+                              gap: "10px",
+                              padding: "5px 10px", // Thêm padding để vùng hover rộng hơn
+                              borderRadius: "5px", // Bo góc khi hover
+                              "&:hover": {
+                                 backgroundColor: "#f0f0f0", // Màu nền xám khi hover
+                              },
+                           }}
+                           variant="body2">
+                           <SmartphoneIcon />
+                           Phone
                         </Typography>
-                        <Typography sx={{ cursor: "pointer" }} variant="body2">
-                           Backpacks
+                        <Typography
+                           sx={{
+                              cursor: "pointer",
+                              display: "flex",
+                              alignItems: "center",
+                              gap: "10px",
+                              padding: "5px 10px", // Thêm padding để vùng hover rộng hơn
+                              borderRadius: "5px", // Bo góc khi hover
+                              "&:hover": {
+                                 backgroundColor: "#f0f0f0", // Màu nền xám khi hover
+                              },
+                           }}
+                           variant="body2">
+                           <LaptopIcon />
+                           Laptop
                         </Typography>
-                        <Typography sx={{ cursor: "pointer" }} variant="body2">
+                        {/* <Typography sx={{ cursor: "pointer" }} variant="body2">
                            Travel Bags
                         </Typography>
                         <Typography sx={{ cursor: "pointer" }} variant="body2">
@@ -271,7 +299,7 @@ export const ProductList = () => {
                         </Typography>
                         <Typography sx={{ cursor: "pointer" }} variant="body2">
                            Laptop Sleeves
-                        </Typography>
+                        </Typography> */}
                      </Stack>
 
                      {/* brand filters */}

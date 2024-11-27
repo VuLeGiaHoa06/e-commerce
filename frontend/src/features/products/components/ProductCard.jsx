@@ -97,7 +97,7 @@ export const ProductCard = ({
                   sx={{
                      transition: "transform 0.3s ease", // Smooth transition for hover effect
                      "&:hover": {
-                        transform: "scale(1.1)", // Zoom effect
+                        transform: "scale(1.05)", // Zoom effect
                      },
                   }}>
                   <img

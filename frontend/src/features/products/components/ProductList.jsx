@@ -314,7 +314,7 @@ export const ProductList = () => {
                               <Typography>Brands</Typography>
                            </AccordionSummary>
 
-                           <AccordionDetails sx={{ p: 0 }}>
+                           {/* <AccordionDetails sx={{ p: 0 }}>
                               <FormGroup onChange={handleBrandFilters}>
                                  {brands?.map(brand => (
                                     <motion.div
@@ -334,6 +334,32 @@ export const ProductList = () => {
                                     </motion.div>
                                  ))}
                               </FormGroup>
+                           </AccordionDetails> */}
+                           <AccordionDetails sx={{ p: 0 }}>
+                              <FormGroup>
+                                 {brands?.map(brand => (
+                                    <motion.div
+                                       key={brand._id} // Add a unique key for React rendering
+                                       style={{ width: "fit-content" }}
+                                       whileHover={{ x: 5 }}
+                                       whileTap={{ scale: 0.9 }}>
+                                       <FormControlLabel
+                                          sx={{ ml: 1 }}
+                                          control={
+                                             <Checkbox
+                                                value={brand._id} // Pass the brand ID
+                                                checked={(
+                                                   filters.brand || []
+                                                ).includes(brand._id)}
+                                                // Dynamically control checked state
+                                                onChange={handleBrandFilters} // Handle change
+                                             />
+                                          }
+                                          label={brand.name} // Display the category name
+                                       />
+                                    </motion.div>
+                                 ))}
+                              </FormGroup>
                            </AccordionDetails>
                         </Accordion>
                      </Stack>
@@ -345,7 +371,7 @@ export const ProductList = () => {
                               expandIcon={<AddIcon />}
                               aria-controls="brand-filters"
                               id="brand-filters">
-                              <Typography>Category</Typography>
+                              <Typography>Categories</Typography>
                            </AccordionSummary>
                            {/* <AccordionDetails sx={{ p: 0 }}>
                               <FormGroup onChange={handleCategoryFilters}>

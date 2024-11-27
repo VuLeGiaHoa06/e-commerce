@@ -70,7 +70,9 @@ const sortOptions = [
 const bannerImages = [banner1, banner3, banner2, banner4];
 
 export const ProductList = () => {
-   const [filters, setFilters] = useState({});
+   // const [filters, setFilters] = useState({});
+   const [filters, setFilters] = useState({ category: [] });
+
    const [page, setPage] = useState(1);
    const [sort, setSort] = useState(null);
    const theme = useTheme();
@@ -345,8 +347,7 @@ export const ProductList = () => {
                               id="brand-filters">
                               <Typography>Category</Typography>
                            </AccordionSummary>
-
-                           <AccordionDetails sx={{ p: 0 }}>
+                           {/* <AccordionDetails sx={{ p: 0 }}>
                               <FormGroup onChange={handleCategoryFilters}>
                                  {categories?.map(category => (
                                     <motion.div
@@ -366,7 +367,34 @@ export const ProductList = () => {
                                     </motion.div>
                                  ))}
                               </FormGroup>
+                           </AccordionDetails> */}
+                           <AccordionDetails sx={{ p: 0 }}>
+                              <FormGroup>
+                                 {categories?.map(category => (
+                                    <motion.div
+                                       key={category._id} // Add a unique key for React rendering
+                                       style={{ width: "fit-content" }}
+                                       whileHover={{ x: 5 }}
+                                       whileTap={{ scale: 0.9 }}>
+                                       <FormControlLabel
+                                          sx={{ ml: 1 }}
+                                          control={
+                                             <Checkbox
+                                                value={category._id} // Pass the category ID
+                                                checked={(
+                                                   filters.category || []
+                                                ).includes(category._id)}
+                                                // Dynamically control checked state
+                                                onChange={handleCategoryFilters} // Handle change
+                                             />
+                                          }
+                                          label={category.name} // Display the category name
+                                       />
+                                    </motion.div>
+                                 ))}
+                              </FormGroup>
                            </AccordionDetails>
+                           ;
                         </Accordion>
                      </Stack>
                   </Stack>

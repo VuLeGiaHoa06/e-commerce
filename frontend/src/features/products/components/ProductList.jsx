@@ -263,15 +263,15 @@ export const ProductList = () => {
                      <Stack rowGap={2} mt={4}>
                         <Typography
                            sx={{
-                              cursor: "pointer",
+                              // cursor: "pointer",
                               display: "flex",
                               alignItems: "center",
                               gap: "10px",
                               padding: "5px 10px", // Thêm padding để vùng hover rộng hơn
                               borderRadius: "5px", // Bo góc khi hover
-                              "&:hover": {
-                                 backgroundColor: "#f0f0f0", // Màu nền xám khi hover
-                              },
+                              // "&:hover": {
+                              //    backgroundColor: "#f0f0f0", // Màu nền xám khi hover
+                              // },
                            }}
                            variant="body2">
                            <SmartphoneIcon />
@@ -279,15 +279,15 @@ export const ProductList = () => {
                         </Typography>
                         <Typography
                            sx={{
-                              cursor: "pointer",
+                              // cursor: "pointer",
                               display: "flex",
                               alignItems: "center",
                               gap: "10px",
                               padding: "5px 10px", // Thêm padding để vùng hover rộng hơn
                               borderRadius: "5px", // Bo góc khi hover
-                              "&:hover": {
-                                 backgroundColor: "#f0f0f0", // Màu nền xám khi hover
-                              },
+                              // "&:hover": {
+                              //    backgroundColor: "#f0f0f0", // Màu nền xám khi hover
+                              // },
                            }}
                            variant="body2">
                            <LaptopIcon />
@@ -310,7 +310,15 @@ export const ProductList = () => {
                            <AccordionSummary
                               expandIcon={<AddIcon />}
                               aria-controls="brand-filters"
-                              id="brand-filters">
+                              id="brand-filters"
+                              sx={{
+                                 borderBottom: "1px solid #000",
+                                 paddingBottom: "2px",
+                                 backgroundColor: "#f5f5f5",
+                                 "&:hover": {
+                                    backgroundColor: "#f0f0f0",
+                                 },
+                              }}>
                               <Typography>Brands</Typography>
                            </AccordionSummary>
 
@@ -370,7 +378,15 @@ export const ProductList = () => {
                            <AccordionSummary
                               expandIcon={<AddIcon />}
                               aria-controls="brand-filters"
-                              id="brand-filters">
+                              id="brand-filters"
+                              sx={{
+                                 borderBottom: "1px solid #000",
+                                 paddingBottom: "2px",
+                                 backgroundColor: "#f5f5f5",
+                                 "&:hover": {
+                                    backgroundColor: "#f0f0f0",
+                                 },
+                              }}>
                               <Typography>Categories</Typography>
                            </AccordionSummary>
                            {/* <AccordionDetails sx={{ p: 0 }}>
@@ -420,7 +436,6 @@ export const ProductList = () => {
                                  ))}
                               </FormGroup>
                            </AccordionDetails>
-                           ;
                         </Accordion>
                      </Stack>
                   </Stack>

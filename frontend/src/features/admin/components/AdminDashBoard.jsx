@@ -150,15 +150,15 @@ export const AdminDashBoard = () => {
                <Stack rowGap={2} mt={4}>
                   <Typography
                      sx={{
-                        cursor: "pointer",
+                        // cursor: "pointer",
                         display: "flex",
                         alignItems: "center",
                         gap: "10px",
                         padding: "5px 10px", // Thêm padding để vùng hover rộng hơn
                         borderRadius: "5px", // Bo góc khi hover
-                        "&:hover": {
-                           backgroundColor: "#f0f0f0", // Màu nền xám khi hover
-                        },
+                        // "&:hover": {
+                        //    backgroundColor: "#f0f0f0", // Màu nền xám khi hover
+                        // },
                      }}
                      variant="body2">
                      <SmartphoneIcon />
@@ -166,15 +166,15 @@ export const AdminDashBoard = () => {
                   </Typography>
                   <Typography
                      sx={{
-                        cursor: "pointer",
+                        // cursor: "pointer",
                         display: "flex",
                         alignItems: "center",
                         gap: "10px",
                         padding: "5px 10px", // Thêm padding để vùng hover rộng hơn
                         borderRadius: "5px", // Bo góc khi hover
-                        "&:hover": {
-                           backgroundColor: "#f0f0f0", // Màu nền xám khi hover
-                        },
+                        // "&:hover": {
+                        //    backgroundColor: "#f0f0f0", // Màu nền xám khi hover
+                        // },
                      }}
                      variant="body2">
                      <LaptopIcon />

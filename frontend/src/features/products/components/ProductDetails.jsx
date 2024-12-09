@@ -270,7 +270,7 @@ export const ProductDetails = () => {
                      <Stack
                         width={is480 ? "auto" : is1420 ? "auto" : "88rem"}
                         p={is480 ? 2 : 0}
-                        height={is840 ? "auto" : "50rem"}
+                        height={is840 ? "auto" : "38rem"}
                         rowGap={5}
                         mt={is840 ? 0 : 5}
                         justifyContent={"center"}
@@ -280,10 +280,11 @@ export const ProductDetails = () => {
                         {/* left stack (images) */}
                         <Stack
                            sx={{
-                              flexDirection: "row",
+                              display: "flex",
+                              flexDirection: "column-reverse",
                               columnGap: "2.5rem",
                               alignSelf: "flex-start",
-                              height: "100%",
+                              height: "85%",
                            }}>
                            {/* image selection */}
                            {!is1420 && (
@@ -291,8 +292,10 @@ export const ProductDetails = () => {
                                  sx={{
                                     display: "flex",
                                     rowGap: "1.5rem",
-                                    height: "100%",
+                                    // height: "100%",
+                                    height: "55%",
                                     overflowY: "scroll",
+                                    flexDirection: "row"
                                  }}>
                                  {product &&
                                     product.images.map((image, index) => (
@@ -300,8 +303,9 @@ export const ProductDetails = () => {
                                           // whileHover={{ scale: 1.1 }}
                                           // whileTap={{ scale: 1 }}
                                           style={{
-                                             width: "200px",
+                                             width: "150px",
                                              cursor: "pointer",
+                                             marginTop: "2.5rem"
                                           }}
                                           onClick={() => {
                                              setSelectedImageIndex(index);
@@ -321,7 +325,7 @@ export const ProductDetails = () => {
                            )}
 
                            {/* selected image */}
-                           <Stack mt={is480 ? "0rem" : "5rem"}>
+                           <Stack mt={is480 ? "0rem" : "0rem"}>
                               {is1420 ? (
                                  <Stack
                                     width={
@@ -402,10 +406,10 @@ export const ProductDetails = () => {
                                     />
                                  </Stack>
                               ) : (
-                                 <div style={{ width: "100%" }}>
+                                 <div style={{ width: "100%", textAlign: "center" }}>
                                     <img
                                        style={{
-                                          width: "100%",
+                                          width: "300px",
                                           objectFit: "contain",
                                           aspectRatio: 1 / 1,
                                        }}

@@ -294,7 +294,7 @@ export const ProductDetails = () => {
                                     rowGap: "1.5rem",
                                     // height: "100%",
                                     height: "55%",
-                                    overflowY: "scroll",
+                                    // overflowY: "scroll",
                                     flexDirection: "row"
                                  }}>
                                  {product &&

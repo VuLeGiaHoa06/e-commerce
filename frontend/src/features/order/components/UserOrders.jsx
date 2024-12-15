@@ -79,8 +79,9 @@ export const UserOrders = () => {
    const handleAddToCart = product => {
       const item = {
          user: loggedInUser._id,
-         product: product._id,
+         product: product.product._id,
          quantity: 1,
+         image: product.image
       };
       dispatch(addToCartAsync(item));
    };
@@ -260,7 +261,7 @@ export const UserOrders = () => {
                                                 variant="contained"
                                                 onClick={() =>
                                                    handleAddToCart(
-                                                      product.product
+                                                      product
                                                    )
                                                 }>
                                                 Buy Again

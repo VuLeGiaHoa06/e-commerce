@@ -191,37 +191,7 @@ export const AdminDashBoard = () => {
                   </Typography> */}
                </Stack>
 
-               {/* brand filters */}
-               <Stack mt={2}>
-                  <Accordion>
-                     <AccordionSummary
-                        expandIcon={<AddIcon />}
-                        aria-controls="brand-filters"
-                        id="brand-filters">
-                        <Typography>Brands</Typography>
-                     </AccordionSummary>
-
-                     <AccordionDetails sx={{ p: 0 }}>
-                        <FormGroup onChange={handleBrandFilters}>
-                           {brands?.map(brand => (
-                              <motion.div
-                                 style={{ width: "fit-content" }}
-                                 whileHover={{ x: 5 }}
-                                 whileTap={{ scale: 0.9 }}>
-                                 <FormControlLabel
-                                    sx={{ ml: 1 }}
-                                    control={
-                                       <Checkbox whileHover={{ scale: 1.1 }} />
-                                    }
-                                    label={brand.name}
-                                    value={brand._id}
-                                 />
-                              </motion.div>
-                           ))}
-                        </FormGroup>
-                     </AccordionDetails>
-                  </Accordion>
-               </Stack>
+               
 
                {/* category filters */}
                <Stack mt={2}>
@@ -229,7 +199,15 @@ export const AdminDashBoard = () => {
                      <AccordionSummary
                         expandIcon={<AddIcon />}
                         aria-controls="brand-filters"
-                        id="brand-filters">
+                        id="brand-filters"
+                        sx={{
+                           borderBottom: "1px solid #000",
+                           paddingBottom: "2px",
+                           backgroundColor: "#f5f5f5",
+                           "&:hover": {
+                              backgroundColor: "#f0f0f0",
+                           },
+                        }}>
                         <Typography>Category</Typography>
                      </AccordionSummary>
 
@@ -247,6 +225,46 @@ export const AdminDashBoard = () => {
                                     }
                                     label={category.name}
                                     value={category._id}
+                                 />
+                              </motion.div>
+                           ))}
+                        </FormGroup>
+                     </AccordionDetails>
+                  </Accordion>
+               </Stack>
+               {/* brand filters */}
+               <Stack mt={2}>
+                  <Accordion>
+                     <AccordionSummary
+                        expandIcon={<AddIcon />}
+                        aria-controls="brand-filters"
+                        id="brand-filters"
+                        sx={{
+                           borderBottom: "1px solid #000",
+                           paddingBottom: "2px",
+                           backgroundColor: "#f5f5f5",
+                           "&:hover": {
+                              backgroundColor: "#f0f0f0",
+                           },
+                        }}
+                        >
+                        <Typography>Brands</Typography>
+                     </AccordionSummary>
+
+                     <AccordionDetails sx={{ p: 0 }}>
+                        <FormGroup onChange={handleBrandFilters}>
+                           {brands?.map(brand => (
+                              <motion.div
+                                 style={{ width: "fit-content" }}
+                                 whileHover={{ x: 5 }}
+                                 whileTap={{ scale: 0.9 }}>
+                                 <FormControlLabel
+                                    sx={{ ml: 1 }}
+                                    control={
+                                       <Checkbox whileHover={{ scale: 1.1 }} />
+                                    }
+                                    label={brand.name}
+                                    value={brand._id}
                                  />
                               </motion.div>
                            ))}
